@@ -12,4 +12,4 @@ const LazySoul = () => {
   )
 }
 
-export default LazySoul
+export default LazySoul;

@@ -13,7 +13,7 @@ import App from "./App";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />, // App component as the root
+    element: <App />, 
     children: [
       { path: "/", element: <Home /> },
       { path: "/lazysoul", element: <LazySoul /> }
