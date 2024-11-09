@@ -52,16 +52,17 @@ const AnimatedButton = () => {
   ));
 
   return (
-    <div className="relative mb-20">
-      <h1 className="text-9xl uppercase font-bold">Zapp</h1>
+    <div className="relative mb-10 sm:mb-20 text-center">
+      {/* Responsive Heading */}
+      <h1 className="text-7xl sm:text-7xl lg:text-9xl uppercase font-bold">Zapp</h1>
 
       {/* Green Button Wrapper */}
       <div
         ref={buttonRef}
-        className="absolute p-3 -bottom-3 left-28 bg-[#B9D432] transform -skew-x-[20deg] overflow-hidden"
+        className="absolute p-1 sm:p-3 -bottom-2 sm:-bottom-3 left-10 sm:left-20 md:left-28 bg-[#B9D432] transform -skew-x-[20deg] overflow-hidden"
       >
-        <div className="px-3 py-2">
-          <span className="text-2xl font-semibold text-black">{letters}</span>
+        <div className="px-2 sm:px-3 py-1 sm:py-2">
+          <span className="text-lg sm:text-2xl font-semibold text-black">{letters}</span>
         </div>
       </div>
     </div>

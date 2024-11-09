@@ -25,6 +25,9 @@ const Navbar = () => {
       <a href="/#product" className="text-white hover:text-[#B9D432]">
         PRODUCTS
       </a>
+      <a href="/about" className="text-white hover:text-[#B9D432]">
+        ABOUT
+      </a>
       <a href="/#faq" className="text-white hover:text-[#B9D432]">
         FAQ
       </a>
@@ -34,9 +37,7 @@ const Navbar = () => {
       <a href="/#your-fav" className="text-white hover:text-[#B9D432]">
         SHOP NOW
       </a>
-      <a href="/#contact" className="text-white hover:text-[#B9D432]">
-        CONTACT
-      </a>
+      
     </>
   );
 

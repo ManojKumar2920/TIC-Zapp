@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
-  motion, 
-  useMotionValue,
+  motion, useMotionValue,
   useTransform,
   AnimatePresence,
 } from "framer-motion";
@@ -160,10 +159,10 @@ const Card = ({
           alt="Group Image"
           className={`absolute select-none
             ${id === 2 ? "-top-14 left-0" : "bottom-[-20px]"}
-            ${id === 6 ? "w-full md:w-[400px]" : ""}
-            ${id === 7 ? "w-full md:w-[500px]" : ""}
-            ${id === 2 ? "w-[30%] md:w-[300px]" : ""}
-            ${id === 4 ? "w-[60%] md:w-[400px]" : "w-3/5 md:w-[250px]"}
+            ${id === 6 ? "w-[70%] md:w-[400px]" : ""}
+            ${id === 7 ? "w-[80%] md:w-[500px]" : ""}
+            ${id === 2 ? "w-[50%] md:w-[300px]" : ""}
+            ${id === 4 ? "w-[80%] md:w-[400px]" : "w-3/5 md:w-[250px]"}
           `}
           style={{
             left:
@@ -172,9 +171,9 @@ const Card = ({
                 : id === 7
                 ? "15%"
                 : id === 2
-                ? "20%"
+                ? "10%"
                 : id === 4
-                ? "25%"
+                ? "12%"
                 : "50%",
             bottom: id === 4 ? "1%" : id === 7 && "-10%",
             transition: "0.3s ease",

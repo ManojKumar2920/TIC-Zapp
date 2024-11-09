@@ -5,10 +5,10 @@ const CurvedNav = () => {
   const navItems = [
     { label: "ZAPP", path: "/" },
     { label: "PRODUCTS", path: "/#product" },
+    { label: "ABOUT", path: "/about" },
     { label: "FAQ", path: "/#faq" },
     { label: "LAZY SOUL?", path: "/lazysoul" },
     { label: "SHOP NOW", path: "/#your-fav" },
-    { label: "CONTACT", path: "/#contact" },
   ];
 
   return (
