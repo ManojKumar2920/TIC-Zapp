@@ -4,7 +4,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { EXRLoader } from "three/examples/jsm/loaders/EXRLoader";
 import { motion, AnimatePresence } from "framer-motion";
 import { TypewriterEffectSmooth } from "../components/writer";
-import ZappIcon from '../assets/zapp-icon.png'
+import ZappIcon from '../assets/zapp-icon.png';
 
 const Model = () => {
   const canvasRef = useRef(null);

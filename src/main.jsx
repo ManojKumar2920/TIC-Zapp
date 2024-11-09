@@ -8,6 +8,7 @@ import {
 import Home from './pages/Home';
 import LazySoul from "./pages/LazySoul";
 import App from "./App";
+import About from "./pages/About";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,8 @@ const router = createBrowserRouter([
     element: <App />, 
     children: [
       { path: "/", element: <Home /> },
-      { path: "/lazysoul", element: <LazySoul /> }
+      { path: "/lazysoul", element: <LazySoul /> },
+      { path: "/about", element: <About /> }
     ]
   }
 ]);
