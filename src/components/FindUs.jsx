@@ -3,7 +3,7 @@ import ZappIcon from "../assets/zapp-icon.png";
 
 const FindUs = () => {
   return (
-    <div className=" relative flex items-center justify-center h-screen">
+    <div className=" relative flex p-10 items-center justify-center h-screen">
       <div className="absolute top-14 z-0 opacity-30">
         <img
           src={ZappIcon}
@@ -12,8 +12,8 @@ const FindUs = () => {
         />
       </div>
       <div className="  text-center max-w-3xl">
-        <h1 className=" text-3xl my-5">Where to Find Us:</h1>
-        <p className=" text-lg">
+        <h1 className=" text-xl md:text-3xl my-5">Where to Find Us:</h1>
+        <p className=" text-[16px] md:text-lg">
           You can purchase Zapp Energy Shot online through Amazon and Flipkart.
           Look for us in the health drinks section or search directly for “Zapp
           Energy Shot” to find your preferred flavor. Additionally, our
