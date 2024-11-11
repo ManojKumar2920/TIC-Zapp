@@ -84,6 +84,7 @@ const Footer = () => {
           {/* Right Side - Privacy Links */}
           <div className="text-xs flex gap-6 uppercase justify-center md:justify-end items-center">
             <a href="#" className="hover:text-green-400 transition-colors">Privacy Policy</a>
+            <div className="hidden md:block w-px h-4 bg-white/20"></div>
             <a href="#" className="hover:text-green-400 transition-colors">Terms & Conditions</a>
           </div>
         </div>
