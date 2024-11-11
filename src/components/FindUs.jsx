@@ -3,8 +3,8 @@ import ZappIcon from "../assets/zapp-icon.png";
 
 const FindUs = () => {
   return (
-    <div className=" relative flex p-10 items-center justify-center h-screen">
-      <div className="absolute top-[20%] md:top-[10%] z-0 opacity-30">
+    <div className=" relative flex p-10 items-center justify-center h-[60dvh] md:h-screen">
+      <div className="absolute top-0 md:top-[10%] z-0 opacity-30">
         <img
           src={ZappIcon}
           alt="Zapp"
