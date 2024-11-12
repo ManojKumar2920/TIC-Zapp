@@ -9,7 +9,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full  flex flex-col items-center justify-between tracking-wider px-4 sm:px-6 lg:px-20 text-white pb-6 sm:pb-10 mt-[10%]">
+    <footer className="w-full  flex flex-col items-center justify-between tracking-wider px-4 sm:px-6 lg:px-20 text-white pb-6 sm:pb-10 ">
       {/* Main Logo */}
       <div className="w-full flex items-center justify-center py-8 my-10">
         <img

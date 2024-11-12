@@ -7,7 +7,7 @@ const AboutHero = () => {
       <Navbar />
       <div className=" p-10 mt-20 md:mt-32 text-center h-screen flex flex-col items-center justify-center">
         <h1 className=" text-7xl md:text-9xl tracking-tighter my-10">ZAPP</h1>
-        <div className=" max-w-4xl">
+        <div className=" max-w-4xl text-left md:text-center">
           <p className=" text-[16px] md:text-lg">
             Forget everything you know about energy drinks. Zapp isn’t here to
             just wake you up; it’s here to fuel the revolution. This 60ml shot

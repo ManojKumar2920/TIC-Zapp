@@ -79,7 +79,7 @@ const Letter = () => {
     <div className="relative w-screen overflow-hidden">
       <Navbar />
 
-      <div className="w-full flex items-center justify-center mt-[10%]">
+      <div className="w-full flex items-center justify-center mt-[20%] md:mt-[10%]">
         <img src={LetterImg} alt="" width={600} />
       </div>
       <div className="w-full min-h-screen bg-[#B9D432] py-20 px-10 flex flex-col items-center">
