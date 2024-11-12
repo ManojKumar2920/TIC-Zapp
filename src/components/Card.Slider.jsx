@@ -241,7 +241,7 @@ const SwipeCards = () => {
       <div className="relative w-full flex justify-center items-center min-h-[400px] sm:min-h-[500px]">
         {/* Left Arrow */}
         <button
-          className="absolute left-2 sm:left-4 md:left-8 z-10 bg-green-400 rounded-full p-2 cursor-pointer hover:bg-green-500 transition-colors"
+          className="absolute left-2 sm:left-4 md:left-32 z-10 bg-green-400 rounded-full p-2 cursor-pointer hover:bg-green-500 transition-colors"
           onClick={swipeLeft}
         >
           <svg
@@ -274,7 +274,7 @@ const SwipeCards = () => {
 
         {/* Right Arrow */}
         <button
-          className="absolute right-2 sm:right-4 md:right-8 z-10 bg-green-400 rounded-full p-2 cursor-pointer hover:bg-green-500 transition-colors"
+          className="absolute right-2 sm:right-4 md:right-32 z-10 bg-green-400 rounded-full p-2 cursor-pointer hover:bg-green-500 transition-colors"
           onClick={swipeRight}
         >
           <svg
