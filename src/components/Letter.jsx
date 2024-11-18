@@ -141,7 +141,7 @@ const Letter = () => {
               disabled={isSubmitting}
               className="w-full bg-black text-white uppercase py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors duration-200 disabled:bg-gray-400"
             >
-              {isSubmitting ? "Subscribing..." : "Sell my soul"}
+              {isSubmitting ? "Killing lazy soul..." : "kill your lazy soul"}
             </button>
 
             {message && (

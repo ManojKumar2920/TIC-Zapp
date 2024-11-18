@@ -141,7 +141,7 @@ const MobileHeroSection = () => {
 
   return (
     <div id="hero-section" className="relative w-screen h-screen overflow-hidden">
-      <video
+      {/* <video
         autoPlay
         loop
         muted
@@ -149,15 +149,15 @@ const MobileHeroSection = () => {
         className="absolute top-0 left-0 w-full h-full object-cover z-0 rounded-b-xl"
       >
         <source src={MobileVideo} type="video/mp4" />
-      </video>
+      </video> */}
 
       <Navbar />
 
-      {/* <div className="absolute inset-0 flex justify-center items-center z-10">
+      <div className="absolute inset-0 flex justify-center items-center z-10">
         <div style={{ width: sizes.width, height: sizes.height }} className="relative">
           <canvas ref={canvasRef} className="webgl" />
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

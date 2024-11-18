@@ -12,7 +12,6 @@ const About = () => {
         <AboutHero />
         <Ingredients />
         <DietFocused />
-        <FindUs />
         <Footer />
     </div>
   )
