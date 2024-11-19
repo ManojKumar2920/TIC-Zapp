@@ -3,38 +3,46 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { EXRLoader } from 'three/examples/jsm/loaders/EXRLoader';
 import Navbar from './Navbar';
-import MobileVideo from '../assets/zapp-mobile.mp4';
 
 const MobileHeroSection = () => {
-  const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const rendererRef = useRef(null);
   const cameraRef = useRef(null);
   const sceneRef = useRef(null);
   const modelRef = useRef(null);
 
+  // Calculate canvas size based on screen dimensions
   const getCanvasSize = () => {
     const width = window.innerWidth;
     const height = window.innerHeight;
-    return {
-      width: Math.min(width * 0.9, 600),
-      height: Math.min(height * 0.7, 800)
-    };
+    if (width < 768) { // Mobile
+      return {
+        width: Math.min(width * 0.95, 500),
+        height: Math.min(height * 0.7, 700)
+      };
+    } else { // Tablet and above
+      return {
+        width: Math.min(width * 0.95, 800),
+        height: Math.min(height * 0.8, 1000)
+      };
+    }
   };
 
   useEffect(() => {
     const sizes = getCanvasSize();
     
+    // Create scene
     const scene = new THREE.Scene();
     sceneRef.current = scene;
 
-    // Adjusted camera position for better view
+    // Create and position camera
     const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height);
-    camera.position.z = 5;
-    camera.position.y = 0.8; // Slight elevation
+    camera.position.z = 4; // Moved camera closer to make model appear larger
+    camera.position.y = 0.5;
     scene.add(camera);
     cameraRef.current = camera;
 
+    // Initialize renderer
     const renderer = new THREE.WebGLRenderer({
       canvas: canvasRef.current,
       alpha: true,
@@ -45,36 +53,38 @@ const MobileHeroSection = () => {
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     rendererRef.current = renderer;
 
+    // Load environment map
     const exrLoader = new EXRLoader();
     exrLoader.load("city.exr", (texture) => {
       texture.mapping = THREE.EquirectangularReflectionMapping;
       scene.environment = texture;
     });
 
+    // Load and setup 3D model with increased scale
     const modelGroup = new THREE.Group();
     const gltfLoader = new GLTFLoader();
     gltfLoader.load("./Zapp-red.glb", (gltf) => {
       const model = gltf.scene;
-      model.scale.set(40, 40, 40);
+      // Increased scale values
+      const scale = window.innerWidth < 768 ? 35 : 50;
+      model.scale.set(scale, scale, scale);
       model.children[0].material.roughness = 1;
       
-      // Set initial rotation for visibility
       model.rotation.x = 0;
-      model.rotation.y = Math.PI * 0.1; // Slight rotation for visibility
+      model.rotation.y = Math.PI * 0.1;
       model.rotation.z = 0;
       
       modelGroup.add(model);
       modelRef.current = model;
     });
     
-    // Add slight tilt to model group
-    modelGroup.rotation.z = -Math.PI * 0; // Very subtle tilt
+    modelGroup.rotation.z = -Math.PI * 0.1;
     scene.add(modelGroup);
 
-    // Adjusted lighting for better visibility
-    const light = new THREE.DirectionalLight("white", 3);
-    light.position.set(5, 5, 5);
-    scene.add(light);
+    // Setup lighting
+    const mainLight = new THREE.DirectionalLight("white", 3);
+    mainLight.position.set(5, 5, 5);
+    scene.add(mainLight);
     
     const backLight = new THREE.DirectionalLight("white", 2);
     backLight.position.set(-5, -5, -5);
@@ -83,6 +93,7 @@ const MobileHeroSection = () => {
     const ambientLight = new THREE.AmbientLight("white", 2);
     scene.add(ambientLight);
 
+    // Setup texture switching
     const greenTexture = new THREE.TextureLoader().load("green.jpg");
     greenTexture.flipY = false;
     greenTexture.colorSpace = THREE.SRGBColorSpace;
@@ -91,7 +102,6 @@ const MobileHeroSection = () => {
     redTexture.colorSpace = THREE.SRGBColorSpace;
 
     let toggle = true;
-
     const intervalId = setInterval(() => {
       if (modelRef.current) {
         modelRef.current.traverse((child) => {
@@ -103,6 +113,7 @@ const MobileHeroSection = () => {
       }
     }, 2000);
 
+    // Handle window resizing
     const handleResize = () => {
       const newSizes = getCanvasSize();
       if (cameraRef.current && rendererRef.current) {
@@ -113,13 +124,12 @@ const MobileHeroSection = () => {
     };
     window.addEventListener("resize", handleResize);
 
-    // Added very slow rotation for continuous visibility
+    // Animation loop with slower rotation
     const clock = new THREE.Clock();
     const tick = () => {
       const deltaTime = clock.getDelta();
       if (modelRef.current) {
-        // Very slow continuous rotation
-        modelRef.current.rotation.y += deltaTime * 0.2; // Reduced rotation speed
+        modelRef.current.rotation.y += deltaTime * 0.2;
       }
       if (rendererRef.current && sceneRef.current && cameraRef.current) {
         rendererRef.current.render(sceneRef.current, cameraRef.current);
@@ -128,6 +138,7 @@ const MobileHeroSection = () => {
     };
     tick();
 
+    // Cleanup
     return () => {
       window.removeEventListener("resize", handleResize);
       clearInterval(intervalId);
@@ -140,19 +151,8 @@ const MobileHeroSection = () => {
   const sizes = getCanvasSize();
 
   return (
-    <div id="hero-section" className="relative w-screen h-screen overflow-hidden">
-      {/* <video
-        autoPlay
-        loop
-        muted
-        ref={videoRef}
-        className="absolute top-0 left-0 w-full h-full object-cover z-0 rounded-b-xl"
-      >
-        <source src={MobileVideo} type="video/mp4" />
-      </video> */}
-
+    <div id="hero-section" className="relative w-screen h-screen overflow-hidden bg-black">
       <Navbar />
-
       <div className="absolute inset-0 flex justify-center items-center z-10">
         <div style={{ width: sizes.width, height: sizes.height }} className="relative">
           <canvas ref={canvasRef} className="webgl" />
