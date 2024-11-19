@@ -150,7 +150,7 @@ const Model = () => {
   const sizes = getCanvasSize();
 
   return (
-    <div id="product" className="relative w-full h-[60dvh] md:h-dvh  px-4 py-8 flex flex-col lg:flex-row items-center justify-center gap-8">
+    <div id="product" className="relative w-full h-[60dvh] md:h-dvh  px-4 py-8 flex flex-col lg:flex-row items-center justify-center gap-8 z-0">
       {/* Model Section - Hidden on mobile */}
       <div className="hidden md:flex w-full lg:w-1/2 justify-center items-center">
         <div style={{ width: sizes.width, height: sizes.height }} className="relative">
