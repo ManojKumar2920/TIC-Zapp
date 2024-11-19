@@ -16,13 +16,13 @@ const MobileHeroSection = () => {
     const height = window.innerHeight;
     if (width < 768) {
       return {
-        width: Math.min(width * 0.95, 800),
-        height: Math.min(height * 0.7, 1000)
+        width: Math.min(width * 0.95, 500),
+        height: Math.min(height * 0.7, 700)
       };
     } else {
       return {
-        width: Math.min(width * 0.95, 900),
-        height: Math.min(height * 0.8, 1100)
+        width: Math.min(width * 0.95, 800),
+        height: Math.min(height * 0.8, 1000)
       };
     }
   };
@@ -34,7 +34,7 @@ const MobileHeroSection = () => {
     sceneRef.current = scene;
 
     const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height);
-    camera.position.z = 5; // Matched camera position
+    camera.position.z = 3; // Matched camera position
     scene.add(camera);
     cameraRef.current = camera;
 
@@ -130,7 +130,7 @@ const MobileHeroSection = () => {
   return (
     <div id="hero-section" className="relative w-screen h-screen overflow-hidden bg-black">
       <Navbar />
-      <div className="absolute inset-0 flex justify-center items-center z-10">
+      <div className="absolute inset-0 flex justify-center pt-20 items-center z-10">
         <div style={{ width: sizes.width, height: sizes.height }} className="relative">
           <canvas ref={canvasRef} className="webgl" />
         </div>
