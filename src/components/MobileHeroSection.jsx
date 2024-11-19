@@ -11,16 +11,15 @@ const MobileHeroSection = () => {
   const sceneRef = useRef(null);
   const modelRef = useRef(null);
 
-  // Calculate canvas size based on screen dimensions
   const getCanvasSize = () => {
     const width = window.innerWidth;
     const height = window.innerHeight;
-    if (width < 768) { // Mobile
+    if (width < 768) {
       return {
         width: Math.min(width * 0.95, 500),
         height: Math.min(height * 0.7, 700)
       };
-    } else { // Tablet and above
+    } else {
       return {
         width: Math.min(width * 0.95, 800),
         height: Math.min(height * 0.8, 1000)
@@ -31,18 +30,15 @@ const MobileHeroSection = () => {
   useEffect(() => {
     const sizes = getCanvasSize();
     
-    // Create scene
     const scene = new THREE.Scene();
     sceneRef.current = scene;
 
-    // Create and position camera
     const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height);
-    camera.position.z = 4; // Moved camera closer to make model appear larger
+    camera.position.z = 4;
     camera.position.y = 0.5;
     scene.add(camera);
     cameraRef.current = camera;
 
-    // Initialize renderer
     const renderer = new THREE.WebGLRenderer({
       canvas: canvasRef.current,
       alpha: true,
@@ -53,35 +49,35 @@ const MobileHeroSection = () => {
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     rendererRef.current = renderer;
 
-    // Load environment map
     const exrLoader = new EXRLoader();
     exrLoader.load("city.exr", (texture) => {
       texture.mapping = THREE.EquirectangularReflectionMapping;
       scene.environment = texture;
     });
 
-    // Load and setup 3D model with increased scale
+    // Modified model group with initial rotation
     const modelGroup = new THREE.Group();
+    modelGroup.rotation.z = -Math.PI * 0.10; // Increased tilt angle
+    modelGroup.rotation.x = Math.PI * 0.05; // Added slight forward tilt
+    
     const gltfLoader = new GLTFLoader();
     gltfLoader.load("./Zapp-red.glb", (gltf) => {
       const model = gltf.scene;
-      // Increased scale values
       const scale = window.innerWidth < 768 ? 35 : 50;
       model.scale.set(scale, scale, scale);
       model.children[0].material.roughness = 1;
       
-      model.rotation.x = 0;
-      model.rotation.y = Math.PI * 0.1;
-      model.rotation.z = 0;
+      // Modified model rotation for crossed effect
+      model.rotation.x = Math.PI * 0.03; // Slight forward tilt
+      model.rotation.y = Math.PI * 0.10; // Increased side rotation
+      model.rotation.z = Math.PI * 0.06; // Added slight twist
       
       modelGroup.add(model);
       modelRef.current = model;
     });
     
-    modelGroup.rotation.z = -Math.PI * 0.1;
     scene.add(modelGroup);
 
-    // Setup lighting
     const mainLight = new THREE.DirectionalLight("white", 3);
     mainLight.position.set(5, 5, 5);
     scene.add(mainLight);
@@ -93,7 +89,6 @@ const MobileHeroSection = () => {
     const ambientLight = new THREE.AmbientLight("white", 2);
     scene.add(ambientLight);
 
-    // Setup texture switching
     const greenTexture = new THREE.TextureLoader().load("green.jpg");
     greenTexture.flipY = false;
     greenTexture.colorSpace = THREE.SRGBColorSpace;
@@ -113,7 +108,6 @@ const MobileHeroSection = () => {
       }
     }, 2000);
 
-    // Handle window resizing
     const handleResize = () => {
       const newSizes = getCanvasSize();
       if (cameraRef.current && rendererRef.current) {
@@ -124,12 +118,12 @@ const MobileHeroSection = () => {
     };
     window.addEventListener("resize", handleResize);
 
-    // Animation loop with slower rotation
     const clock = new THREE.Clock();
     const tick = () => {
       const deltaTime = clock.getDelta();
       if (modelRef.current) {
-        modelRef.current.rotation.y += deltaTime * 0.2;
+        // Reduced rotation speed for better visibility of the crossed position
+        modelRef.current.rotation.y += deltaTime * 0.15;
       }
       if (rendererRef.current && sceneRef.current && cameraRef.current) {
         rendererRef.current.render(sceneRef.current, cameraRef.current);
@@ -138,7 +132,6 @@ const MobileHeroSection = () => {
     };
     tick();
 
-    // Cleanup
     return () => {
       window.removeEventListener("resize", handleResize);
       clearInterval(intervalId);
