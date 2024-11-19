@@ -16,13 +16,13 @@ const MobileHeroSection = () => {
     const height = window.innerHeight;
     if (width < 768) {
       return {
-        width: Math.min(width * 0.95, 500),
-        height: Math.min(height * 0.7, 700)
+        width: Math.min(width * 0.95, 800),
+        height: Math.min(height * 0.7, 1000)
       };
     } else {
       return {
-        width: Math.min(width * 0.95, 800),
-        height: Math.min(height * 0.8, 1000)
+        width: Math.min(width * 0.95, 900),
+        height: Math.min(height * 0.8, 1100)
       };
     }
   };
@@ -34,8 +34,7 @@ const MobileHeroSection = () => {
     sceneRef.current = scene;
 
     const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height);
-    camera.position.z = 4;
-    camera.position.y = 0.5;
+    camera.position.z = 5; // Matched camera position
     scene.add(camera);
     cameraRef.current = camera;
 
@@ -55,36 +54,22 @@ const MobileHeroSection = () => {
       scene.environment = texture;
     });
 
-    // Modified model group with initial rotation
     const modelGroup = new THREE.Group();
-    modelGroup.rotation.z = -Math.PI * 0.10; // Increased tilt angle
-    modelGroup.rotation.x = Math.PI * 0.05; // Added slight forward tilt
+    modelGroup.rotation.z = -0.8; // Matched rotation
     
     const gltfLoader = new GLTFLoader();
     gltfLoader.load("./Zapp-red.glb", (gltf) => {
       const model = gltf.scene;
-      const scale = window.innerWidth < 768 ? 35 : 50;
-      model.scale.set(scale, scale, scale);
+      model.scale.set(30, 30, 30); // Matched scale
       model.children[0].material.roughness = 1;
-      
-      // Modified model rotation for crossed effect
-      model.rotation.x = Math.PI * 0.03; // Slight forward tilt
-      model.rotation.y = Math.PI * 0.10; // Increased side rotation
-      model.rotation.z = Math.PI * 0.06; // Added slight twist
-      
       modelGroup.add(model);
       modelRef.current = model;
     });
     
     scene.add(modelGroup);
 
-    const mainLight = new THREE.DirectionalLight("white", 3);
-    mainLight.position.set(5, 5, 5);
-    scene.add(mainLight);
-    
-    const backLight = new THREE.DirectionalLight("white", 2);
-    backLight.position.set(-5, -5, -5);
-    scene.add(backLight);
+    const light = new THREE.DirectionalLight("white", 2); // Matched lighting
+    scene.add(light);
     
     const ambientLight = new THREE.AmbientLight("white", 2);
     scene.add(ambientLight);
@@ -122,8 +107,7 @@ const MobileHeroSection = () => {
     const tick = () => {
       const deltaTime = clock.getDelta();
       if (modelRef.current) {
-        // Reduced rotation speed for better visibility of the crossed position
-        modelRef.current.rotation.y += deltaTime * 0.15;
+        modelRef.current.rotation.y += deltaTime; // Matched rotation speed
       }
       if (rendererRef.current && sceneRef.current && cameraRef.current) {
         rendererRef.current.render(sceneRef.current, cameraRef.current);

@@ -46,9 +46,9 @@ const Navbar = () => {
       {/* Desktop Navigation */}
       <div className="hidden md:flex absolute top-0 left-0 w-full z-10 p-8 justify-between items-center bg-gradient-to-b from-black to-transparent">
         <img src={logo} alt="logo" className="h-16 rounded-b-xl" />
-        <div className="flex space-x-10 text-sm font-semibold text-white">
+        <a href className="flex space-x-10 text-sm font-semibold text-white">
           <NavLinks />
-        </div>
+        </a>
       </div>
 
       {/* Mobile Navigation */}
