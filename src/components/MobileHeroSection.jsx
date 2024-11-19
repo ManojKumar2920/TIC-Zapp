@@ -128,7 +128,7 @@ const MobileHeroSection = () => {
   const sizes = getCanvasSize();
 
   return (
-    <div id="hero-section" className="relative w-screen h-[50dvh] overflow-hidden bg-black">
+    <div id="hero-section" className="relative w-screen h-dvh overflow-hidden bg-black">
       <Navbar />
       <div className="absolute inset-0 flex justify-center  items-center z-10">
         <div style={{ width: sizes.width, height: sizes.height }} className="relative mt-32">
