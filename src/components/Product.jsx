@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ZappRed from "../assets/zapp-berry.png";
+import ZappRed from "../assets/zapp-red.png";
 import ZappGreen from "../assets/zapp-lime.png";
 import CurvedNav from "./CurvedNav";
 
