@@ -173,8 +173,8 @@ const Model = () => {
           <h1 className="text-lg sm:text-xl lg:text-2xl text-start leading-relaxed">
             While others give you bloated cans of sugar and gas, we went
             straight for the good stuff—
-            <span className="text-[#C10000]">high caffeine</span>, 
-            <span className="text-[#B9D432]">zero sugar</span>, and a shot
+            <span className="text-[#C10000]"> high caffeine</span>, 
+            <span className="text-[#B9D432]">  zero sugar</span>, and a shot
             that fits in your pocket. Zapp isn't here to make you "feel the
             buzz" or give you a sugar high followed by a crash. We're here to do
             one job: give you real energy, 

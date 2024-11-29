@@ -153,34 +153,32 @@ const Card = ({
         onDragEnd={handleDragEnd}
       />
 
-      {isFront && groupUrl && (
-        <motion.img
-          src={groupUrl}
-          alt="Group Image"
-          className={`absolute select-none
-            ${id === 2 ? "-top-14 left-0" : "bottom-[-20px]"}
-            ${id === 6 ? "w-[70%] md:w-[400px]" : ""}
-            ${id === 7 ? "w-[80%] md:w-[500px]" : ""}
-            ${id === 2 ? "w-[50%] md:w-[300px]" : ""}
-            ${id === 4 ? "w-[80%] md:w-[400px]" : "w-3/5 md:w-[250px]"}
-          `}
-          style={{
-            left:
-              id === 6
-                ? "40%"
-                : id === 7
-                ? "15%"
-                : id === 2
-                ? "10%"
-                : id === 4
-                ? "12%"
-                : "50%",
-            bottom: id === 4 ? "1%" : id === 7 && "-10%",
-            transition: "0.3s ease",
-          }}
-          draggable="false"
-        />
-      )}
+{
+  isFront && groupUrl && (
+    <motion.img
+      src={groupUrl}
+      alt="Group Image"
+      className={`absolute select-none
+        ${id === 2 ? "-top-14 left-0" : "bottom-[-20px]"}
+        ${id === 6 ? "w-[70%] md:w-[400px]" : ""}
+        ${id === 7 ? "w-[80%] md:w-[500px]" : ""}
+        ${id === 2 ? "w-[50%] md:w-[300px]" : ""}
+        ${id === 4 ? "left-[12%] md:!left-[25%] w-[80%] md:w-[400px]" : "w-3/5 md:w-[250px]"}
+      `}
+      style={{
+        left: 
+        id === 4 ? "12%":
+          id === 6 ? "40%" : 
+          id === 7 ? "15%" :
+          id === 2 ? "10%" : "50%",  
+        bottom: id === 4 ? "1%" : id === 7 && "-10%",
+        transition: "0.3s ease",
+      }}
+      draggable="false"
+    />
+  )
+}
+
     </div>
   );
 };

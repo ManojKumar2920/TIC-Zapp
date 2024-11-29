@@ -4,6 +4,7 @@ import logo from "../assets/logo.png";
 import { RiInstagramLine as Insta } from "react-icons/ri";
 import { BsTwitterX as XIcon } from "react-icons/bs";
 import { FaDiscord as Discord } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -38,7 +39,7 @@ const Footer = () => {
 
           {/* Credits and Copyright */}
           <div className="flex flex-col items-center gap-2 text-xs">
-            <p>SITE BY TIC Global</p>
+            <a href='https://www.theinternetcompany.one/'>SITE BY TIC Global</a>
             <p className="uppercase">&copy; {currentYear} ZAPP. All rights reserved.</p>
           </div>
 
@@ -70,7 +71,7 @@ const Footer = () => {
             <div className="hidden md:block w-px h-4 bg-white/20"></div>
 
             {/* Credits */}
-            <p className="text-xs whitespace-nowrap">SITE BY TIC Global</p>
+            <p className="text-xs whitespace-nowrap">SITE BY <a href="https://www.theinternetcompany.one/" className=" hover:text-green-400">TIC Global</a></p>
 
             {/* Divider for desktop */}
             <div className="hidden md:block w-px h-4 bg-white/20"></div>

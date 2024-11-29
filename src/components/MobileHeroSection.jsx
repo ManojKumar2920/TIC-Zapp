@@ -143,6 +143,8 @@ const MobileHeroSection = () => {
         loop
         muted
         ref={videoRef}
+        playsInline
+        webkit-playsInline
         className="absolute top-0 left-0 w-full h-full object-cover z-0 rounded-b-xl"
       >
         <source src={MobileVideo} type="video/mp4" />

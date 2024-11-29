@@ -95,7 +95,7 @@ const Letter = () => {
             coffee (which, let's be honest, could use a little competition).
           </p>
 
-          <form onSubmit={handleSubmit} className="w-full max-w-md mt-8">
+          <form onSubmit={handleSubmit} className="w-full max-w-xl mt-8">
             <div className="flex gap-4">
               <div className="mb-4">
                 <input
@@ -131,8 +131,8 @@ const Letter = () => {
                 className="mt-1"
                 required
               />
-              <label className="text-sm">
-                By selecting "Sell My Soul," I agree to receive important info and offers from Zapp since they will own my soul for eternity.
+              <label className="text-[12px]">
+              You agree to be supercharged by Zapp’s electrifying updates through rare (but absurdly entertaining) emails. By creating an account, I confirm that I’m ready for a boost of greatness and accept the Terms & Conditions / Privacy Policy… because who actually reads those anyway?
               </label>
             </div>
 
