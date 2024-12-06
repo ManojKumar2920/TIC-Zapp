@@ -2,8 +2,8 @@ import React from "react";
 import ZappGenie from "../assets/Zapp_Jenie.png";
 import logo from "../assets/logo.png";
 import { RiInstagramLine as Insta } from "react-icons/ri";
-import { BsTwitterX as XIcon } from "react-icons/bs";
-import { FaDiscord as Discord } from "react-icons/fa6";
+import { BsYoutube, BsTwitterX as XIcon } from "react-icons/bs";
+import { FaYoutube as Youtube } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -26,14 +26,14 @@ const Footer = () => {
         <div className="flex flex-col gap-6 sm:hidden">
           {/* Social Icons */}
           <div className="flex justify-center gap-6 text-2xl">
-            <a href="#" aria-label="Instagram" className="hover:text-green-400 transition-colors">
+            <a href="https://www.instagram.com/zappenergy" aria-label="Instagram" className="hover:text-green-400 transition-colors">
               <Insta />
             </a>
-            <a href="#" aria-label="Twitter X" className="hover:text-green-400 transition-colors">
+            <a href="https://x.com/zappenergyshots" aria-label="Twitter X" className="hover:text-green-400 transition-colors">
               <XIcon />
             </a>
-            <a href="#" aria-label="Discord" className="hover:text-green-400 transition-colors">
-              <Discord />
+            <a href="https://youtube.com/@zappenergy" aria-label="Youtube" className="hover:text-green-400 transition-colors">
+              <Youtube />
             </a>
           </div>
 
@@ -45,8 +45,8 @@ const Footer = () => {
 
           {/* Privacy Links */}
           <div className="text-xs flex gap-6 uppercase justify-center">
-            <a href="#" className="hover:text-green-400 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-green-400 transition-colors">Terms & Conditions</a>
+            <a href="https://shop.zappenergy.in/policies/privacy-policy" target="__blank" className="hover:text-green-400 transition-colors">Privacy Policy</a>
+            <a href="https://shop.zappenergy.in/policies/terms-of-service" target="__blank" className="hover:text-green-400 transition-colors">Terms & Conditions</a>
           </div>
         </div>
 
@@ -56,14 +56,14 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
             {/* Social Icons */}
             <div className="flex gap-6 text-2xl">
-              <a href="#" aria-label="Instagram" className="hover:text-green-400 transition-colors">
+              <a href="https://www.instagram.com/zappenergy" aria-label="Instagram" className="hover:text-green-400 transition-colors">
                 <Insta />
               </a>
-              <a href="#" aria-label="Twitter X" className="hover:text-green-400 transition-colors">
+              <a href="https://x.com/zappenergyshots" aria-label="Twitter X" className="hover:text-green-400 transition-colors">
                 <XIcon />
               </a>
-              <a href="#" aria-label="Discord" className="hover:text-green-400 transition-colors">
-                <Discord />
+              <a href="https://youtube.com/@zappenergy" aria-label="Youtube" className="hover:text-green-400 transition-colors">
+                <Youtube />
               </a>
             </div>
 
@@ -84,9 +84,9 @@ const Footer = () => {
 
           {/* Right Side - Privacy Links */}
           <div className="text-xs flex gap-6 uppercase justify-center md:justify-end items-center">
-            <a href="#" className="hover:text-green-400 transition-colors">Privacy Policy</a>
+            <a href="https://shop.zappenergy.in/policies/privacy-policy" target="__blank" className="hover:text-green-400 transition-colors">Privacy Policy</a>
             <div className="hidden md:block w-px h-4 bg-white/20"></div>
-            <a href="#" className="hover:text-green-400 transition-colors">Terms & Conditions</a>
+            <a href="https://shop.zappenergy.in/policies/terms-of-service" target="__blank" className="hover:text-green-400 transition-colors">Terms & Conditions</a>
           </div>
         </div>
       </div>

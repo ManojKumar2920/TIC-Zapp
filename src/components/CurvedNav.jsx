@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 const CurvedNav = () => {
   const navItems = [
     { label: "ZAPP", path: "/" },
-    { label: "PRODUCTS", path: "https://zappdrink.myshopify.com/collections/all" },
+    { label: "PRODUCTS", path: "https://shop.zappenergy.in/" },
     { label: "ABOUT", path: "/about" },
     { label: "FAQ", path: "/#faq" },
     { label: "LAZY SOUL?", path: "/lazysoul" },
-    { label: "SHOP NOW", path: "https://zappdrink.myshopify.com" },
+    { label: "SHOP NOW", path: "https://shop.zappenergy.in/products/zapp-berry-drink" },
   ];
 
   return (

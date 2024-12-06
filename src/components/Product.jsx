@@ -46,10 +46,10 @@ const Product = () => {
 
       {/* Bottles above text */}
       <div className="z-20 flex items-center justify-center space-x-4 md:space-x-6 mt-4 md:mt-0">
-        <a href="https://zappdrink.myshopify.com/collections/frontpage/products/zapp-berry-drink">
+        <a href="https://shop.zappenergy.in/products/zapp-berry-drink">
           <img src={ZappRed} alt="Zapp Red" className="w-36 md:w-96" />
         </a>
-        <a href="https://zappdrink.myshopify.com/collections/frontpage/products/zapp-lime-drink">
+        <a href="https://shop.zappenergy.in/products/zapp-lime-drink">
           <img src={ZappGreen} alt="Zapp Green" className="w-36 md:w-96" />
         </a>
       </div>

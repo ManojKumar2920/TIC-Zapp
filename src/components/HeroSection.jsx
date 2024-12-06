@@ -18,13 +18,13 @@ const HeroSection = () => {
 
   const SocialLinks = () => (
     <div className="absolute bottom-[30%] flex flex-col gap-4 left-10 transform -translate-y-1/2">
-      <a href="https://x.com/zappenergyshots?t=rveIoAI8FuO-UXaj0pHjLQ&s=09" target="_blank">
+      <a href="https://x.com/zappenergyshots" target="_blank">
         <FaXTwitter className="text-white bg-black p-2 rounded-full text-3xl" />
       </a>
-      <a href="https://www.instagram.com/zappenergy/profilecard/?igsh=MzBhazI5bHN4YWhk" target="_blank">
+      <a href="https://www.instagram.com/zappenergy" target="_blank">
         <FaInstagram className="text-white bg-black p-2 rounded-full text-3xl" />
       </a>
-      <a href="https://youtube.com/@zappenergy?si=qp3fuuySFR5OWtwa" target="_blank">
+      <a href="https://youtube.com/@zappenergy" target="_blank">
         <FaYoutube className="text-white bg-black p-2 rounded-full text-3xl" />
       </a>
     </div>
@@ -52,10 +52,8 @@ const HeroSection = () => {
 
       {/* Action Icons */}
       <div className="absolute hidden right-10 bottom-4 md:flex flex-col items-end gap-3 z-10">
-        <a href="#" className="p-2 border border-white rounded-full">
-          <HiMiniArrowUpRight className="text-white rounded-full text-xl" />
-        </a>
-        <a href="#" className="p-2 border border-white rounded-full">
+        
+        <a href="https://shop.zappenergy.in" target="__blank" className="p-2 border border-white rounded-full">
           <HiMiniArrowUpRight className="text-black rounded-full text-4xl bg-white" />
         </a>
       </div>

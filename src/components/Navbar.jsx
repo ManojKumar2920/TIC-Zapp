@@ -22,7 +22,7 @@ const Navbar = () => {
       <a href="/" className="text-white hover:text-[#B9D432]">
         ZAPP
       </a>
-      <a href="https://zappdrink.myshopify.com/collections/all" className="text-white hover:text-[#B9D432]">
+      <a href="https://shop.zappenergy.in/" target="__blank" className="text-white hover:text-[#B9D432]">
         PRODUCTS
       </a>
       <a href="/about" className="text-white hover:text-[#B9D432]">
@@ -34,7 +34,7 @@ const Navbar = () => {
       <a href="/lazysoul" className="text-white hover:text-[#B9D432]">
         LAZY SOUL?
       </a>
-      <a href="https://zappdrink.myshopify.com/cart" className="text-white hover:text-[#B9D432]">
+      <a href="https://shop.zappenergy.in/products/zapp-berry-drink" target="__blank" className="text-white hover:text-[#B9D432]">
         SHOP NOW
       </a>
       
