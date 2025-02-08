@@ -40,7 +40,7 @@ const Product = () => {
       {/* Centered text */}
       <div className="z-10 text-center absolute inset-0 flex items-center justify-center">
         <h1 className="text-6xl md:text-9xl font-bold text-white drop-shadow-lg uppercase opacity-40">
-          Pick <br /> your <br /> favorite
+         Choose<br /> Your <br />Flavor 
         </h1>
       </div>
 

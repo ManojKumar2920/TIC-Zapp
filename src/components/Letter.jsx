@@ -132,7 +132,7 @@ const Letter = () => {
                 required
               />
               <label className="text-[12px]">
-              You agree to be supercharged by Zapp’s electrifying updates through rare (but absurdly entertaining) emails. By creating an account, I confirm that I’m ready for a boost of greatness and accept the Terms & Conditions / Privacy Policy… because who actually reads those anyway?
+              You agree to be supercharged by Zapp’s electrifying updates through rare (but absurdly entertaining) emails. By creating an account, I confirm that I’m ready for a boost of greatness and accept the <a href="https://shop.zappenergy.in/policies/terms-of-service" className=" underline">Terms & Conditions</a> / <a href="https://shop.zappenergy.in/policies/privacy-policy" className=" underline">Privacy Policy</a>… because who actually reads those anyway?
               </label>
             </div>
 

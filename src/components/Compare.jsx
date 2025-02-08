@@ -74,7 +74,7 @@ const Compare = ({
       {/* Text overlay */}
       <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
         <h1 className="text-[150px] font-bold text-white text-center opacity-40 leading-tight">
-          PICK YOUR <br /> FAVORITE
+        Berry or Lime? Click Your Fav!
         </h1>
       </div>
 
